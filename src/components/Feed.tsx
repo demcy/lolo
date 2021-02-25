@@ -1,8 +1,24 @@
-import React from 'react';
+import axios from 'axios';
+import React, {useEffect} from 'react';
 import { FeedApi } from '../services/FeedApi';
 
+// const Axios = () => {
+//     useEffect(() => {
+//         axios.get(`/@raimoseero/feed-nii8kd0sz.rss`).then(res => {
+//             console.log(res.data);
+//         });
+//     })
+// }
+
 export default class User extends React.Component {
+
+    
+
     async componentDidMount() {
+
+        // axios.get(`https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss`).then(res => {
+        //     console.log(res.data);
+        // });
 
         //let xhr = new XMLHttpRequest();
         
@@ -36,19 +52,21 @@ export default class User extends React.Component {
         //     }
         //   };
 
-        const RSS_URL = 'https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss';
+//         const RSS_URL = 'https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss';
+//         //const RSS_URL = '/@raimoseero/feed-nii8kd0sz.rss';
 
-//         fetch(RSS_URL)
-// .then(x => console.log(x.text()))
+// //         fetch(RSS_URL)
+// // .then(x => console.log(x.text()))
 
 
-        fetch(RSS_URL, {mode:'no-cors'})
-            .then(response => response.text())
-            .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-            .then(data => console.log(data))
+//         fetch(RSS_URL, {mode:'no-cors'})
+//         //fetch(RSS_URL)
+//             .then(response => response.text())
+//             .then(str => new window.DOMParser().parseFromString(str, "text/html"))
+//             .then(data => console.log(data))
 
-        // const data = await FeedApi.getAll();
-        // console.log(data)
+        const data = await FeedApi.getAll();
+        console.log(data)
 
         
 

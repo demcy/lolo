@@ -8,12 +8,19 @@ export abstract class FeedApi {
     private static axios = Axios.create(
         {
             baseURL: 'https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss',
-            headers: {
-                common: {
-                    'Content-Type': 'application/xml',
-                    'Access-Control-Allow-Headers': '*'
-                }
-            }
+            
+            proxy: {
+                host: 'https://flipboard.com/',
+                port: 443
+            },
+            // headers: {
+            //     common: {
+            //         'Content-Type': 'application/xml',
+            //         'Access-Control-Allow-Headers': '*',
+            //         'Access-Control-Allow-Methods': 'OPTIONS'
+            //     }
+            // },
+           
         }
     )
 
