@@ -16,9 +16,9 @@ export default class User extends React.Component {
 
     async componentDidMount() {
 
-        // axios.get(`https://flipboard.com/@raimoseero/feed-nii8kd0sz.rss`).then(res => {
-        //     console.log(res.data);
-        // });
+        axios.get(`@raimoseero/feed-nii8kd0sz.rss`).then(res => {
+            console.log(res.data);
+        });
 
         //let xhr = new XMLHttpRequest();
         
@@ -65,8 +65,8 @@ export default class User extends React.Component {
 //             .then(str => new window.DOMParser().parseFromString(str, "text/html"))
 //             .then(data => console.log(data))
 
-        const data = await FeedApi.getAll();
-        console.log(data)
+        // const data = await FeedApi.getAll();
+        // console.log(data)
 
         
 
